@@ -59,6 +59,17 @@ options(max.print=10000)
 #Modification indices goes as follows
 modindices(cfa.fit)
 
+# Ask for interval confidence of items factor loading
+# Factor loadings of items are not standardized
+cfa.fit.IC.NoStand <- parameterEstimates(cfa.fit)
+View(cfa.fit.IC.NoStand)
+
+
+# # Factor loadings of items are standardized
+cfa.fit.IC.Stand <- standardizedSolution(cfa.fit)
+View(cfa.fit.IC.Stand)
+
+
 ###Calculating reliability with Alpha and Omega
   #Select the items you want to use to calculate the reliability by putting each name in paranthesis
   #It shows the upper and lower limits
