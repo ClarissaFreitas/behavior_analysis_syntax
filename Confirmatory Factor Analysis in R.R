@@ -91,6 +91,21 @@ r3 <- DemoData[,c("item1", "item2", "item3", "item4", "item5", "item6" )]
 ci.reliability(data=r3, type='alpha', interval.type = "41", B=500)
 ci.reliability(data=r3, type='omega', interval.type = "41", B=500)
 
+###Calculating reliability with Ordinal Alpha
+# The Ordinal Alpha should be used when you are analysing data with factor analysis model
+# For more information see Zumbo, B. D., Gadermann, A. M., & Zeisser, C. (2007). Ordinal versions of coefficients alpha and theta for Likert rating scales. Journal of Modern Applied Statistical Methods, 6(1), 21-29.
+
+r1_p <- polychoric(r1) #In order to create the polychoric correlation matrix for 'r1'
+alpha(r1_p$rho)
+
+
+r2_p <- polychoric(r2) #In order to create the polychoric correlation matrix for 'r2'
+alpha(r2_p$rho)
+
+
+r3_p <- polychoric(r3) #In order to create the polychoric correlation matrix for 'r3'
+alpha(r3_p$rho)
+
 #________________________________________________________________________________
 #If you wish to compare models, use the following syntax
 ##First, define the second model and it's cfa
